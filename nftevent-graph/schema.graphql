@@ -1,0 +1,11 @@
+type ERC721CollectionCreated @entity(immutable: true) {
+  id: Bytes!
+  collection: Bytes! # address
+  name: String! # string
+  symbol: String! # string
+  initialOwner: Bytes! # address
+  maxSupply: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
