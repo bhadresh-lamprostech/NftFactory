@@ -2,7 +2,7 @@ specVersion: 1.0.0
 indexerHints:
   prune: auto
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: NFTFactory
@@ -19,11 +19,11 @@ dataSources:
         - ERC721CollectionCreated
       abis:
         - name: NFTFactory
-          file: ./abis/NFTFactory.json
+          file: NFTFactory/abis/NFTFactory.json
       eventHandlers:
         - event: ERC721CollectionCreated(indexed address,string,string,address,uint256)
           handler: handleERC721CollectionCreated
-      file: ./src/nft-factory.ts
+      file: NFTFactory/NFTFactory.wasm
   - kind: ethereum
     name: ERC721Clonable
     network: sepolia
@@ -46,7 +46,7 @@ dataSources:
         - Unpaused
       abis:
         - name: ERC721Clonable
-          file: ./abis/ERC721Clonable.json
+          file: ERC721Clonable/abis/ERC721Clonable.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,indexed uint256)
           handler: handleApproval
@@ -64,4 +64,4 @@ dataSources:
           handler: handleTransfer
         - event: Unpaused(address)
           handler: handleUnpaused
-      file: ./src/erc-721-clonable.ts
+      file: ERC721Clonable/ERC721Clonable.wasm
