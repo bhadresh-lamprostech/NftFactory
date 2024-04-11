@@ -6,11 +6,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: NFTFactory
-    network: sepolia
+    network: mode-testnet
     source:
-      address: "0x70E9479b815d315c5f41a8Cdc8eb1AA61556254E"
+      address: "0x8590839765a5976aF65A13eFB50971Fade9088d2"
       abi: NFTFactory
-      startBlock: 5660481
+      startBlock: 12437405
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -26,11 +26,11 @@ dataSources:
       file: ./src/nft-factory.ts
   - kind: ethereum
     name: ERC721Clonable
-    network: sepolia
+    network: mode-testnet
     source:
-      address: "0x71D49C38a910f6eF0F0D1Ea8715cFece0601Eb8D"
+      address: "0x3CB6423786D992b3F83578bC8F736ce051d168EE"
       abi: ERC721Clonable
-      startBlock: 5660475
+      startBlock: 12431128
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
