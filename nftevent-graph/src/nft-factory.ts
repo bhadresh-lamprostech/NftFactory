@@ -1,5 +1,6 @@
 import { ERC721CollectionCreated as ERC721CollectionCreatedEvent } from "../generated/NFTFactory/NFTFactory"
 import { ERC721CollectionCreated } from "../generated/schema"
+import { ERC721Clonable } from "../generated/templates"
 
 export function handleERC721CollectionCreated(
   event: ERC721CollectionCreatedEvent
@@ -18,4 +19,6 @@ export function handleERC721CollectionCreated(
   entity.transactionHash = event.transaction.hash
 
   entity.save()
+
+  ERC721Clonable.create(event.params.collection)
 }

@@ -10,7 +10,7 @@ dataSources:
     source:
       address: "0x8590839765a5976aF65A13eFB50971Fade9088d2"
       abi: NFTFactory
-      startBlock: 12437405
+      startBlock: 12431136
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -24,13 +24,14 @@ dataSources:
         - event: ERC721CollectionCreated(indexed address,string,string,address,uint256)
           handler: handleERC721CollectionCreated
       file: ./src/nft-factory.ts
+templates:
   - kind: ethereum
     name: ERC721Clonable
     network: mode-testnet
     source:
-      address: "0x3CB6423786D992b3F83578bC8F736ce051d168EE"
+      # address: "0x3CB6423786D992b3F83578bC8F736ce051d168EE"
       abi: ERC721Clonable
-      startBlock: 12431128
+      # startBlock: 12431136
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
